@@ -12,7 +12,7 @@ A minimalistic boilerplate for [Bootstrap 4](https://getbootstrap.com) with [Sas
 
 ## Gulp tasks
 
-* `gulp` - The default task that compiles Sass, concatenates CSS & JS files and moves dependencies to vendor folders
+* `gulp` - The default task that compiles Sass, concatenates CSS & JS files, creates sourcemaps and moves dependencies to vendor folders
 
 * `gulp vendor` - Moves dependencies to vendor folders
 
