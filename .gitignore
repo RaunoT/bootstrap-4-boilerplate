@@ -17,9 +17,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# Icon must end with two \r
-Icon
-
 # Thumbnails
 ._*
 
@@ -34,9 +31,11 @@ Temporary Items
 
 # Sass
 .sass-cache/
+
+# CSS sourcemaps
 *.css.map
 
-# JS maps
+# JS sourcemaps
 *.js.map
 
 # Node modules
@@ -44,3 +43,6 @@ node_modules/
 
 # Distribution/build folder
 dist/
+
+# Visual Studio Code user settings
+.vscode/
