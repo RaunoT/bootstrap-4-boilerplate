@@ -21,6 +21,8 @@ function fillVendor() {
 	// Bootstrap
 	gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css*')
 		.pipe(gulp.dest('./css/vendor/bootstrap'))
+	gulp.src('./node_modules/bootstrap/scss/mixins/_breakpoints.scss')
+		.pipe(gulp.dest('./css/scss'))
 	gulp.src('./node_modules/bootstrap/dist/js/bootstrap.min.js*')
 		.pipe(gulp.dest('./js/vendor/bootstrap'))
 	// Popper.js
@@ -111,7 +113,7 @@ gulp.task('dist', gulp.series('vendor', cleanDist, build, renameSources, compile
 gulp.task('default', gulp.series('vendor', compileSass, concatCss, concatJs));
 
 // Dev tasks
-function watch () {
+function watch() {
 	browsersync.init({
 		server: './'
 	});
