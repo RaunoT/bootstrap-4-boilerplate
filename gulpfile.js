@@ -12,33 +12,11 @@ var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
 	browsersync = require('browser-sync').create();
 
-// Vendor tasks
-function cleanVendor() {
-	return del(['./css/vendor**', './js/vendor**']);
-}
-
-function fillVendor() {
-	// Bootstrap
-	gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css*')
-		.pipe(gulp.dest('./css/vendor/bootstrap'))
-	gulp.src('./node_modules/bootstrap/dist/js/bootstrap.min.js*')
-		.pipe(gulp.dest('./js/vendor/bootstrap'))
-	// Popper.js
-	gulp.src('./node_modules/popper.js/dist/umd/popper.min.js*')
-		.pipe(gulp.dest('./js/vendor/popper.js'))
-	// jQuery
-	return gulp.src('./node_modules/jquery/dist/jquery.min*')
-		.pipe(gulp.dest('./js/vendor/jquery'))
-}
-
-gulp.task('vendor', gulp.series(cleanVendor, fillVendor));
-
 // JS tasks
 function concatJs() {
 	return gulp.src([
-			'./js/vendor/jquery/jquery.min.js',
-			'./js/vendor/popper.js/popper.min.js',
-			'./js/vendor/bootstrap/bootstrap.min.js',
+			'./node_modules/jquery/dist/jquery.min.js',
+			'./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
 			'./js/functions.js'
 		])
 		.pipe(maps.init())
@@ -57,15 +35,6 @@ function compileSass() {
 		.pipe(maps.write('./'))
 		.pipe(gulp.dest('./css'))
 		.pipe(browsersync.stream());
-}
-
-function concatCss() {
-	return gulp.src([
-			'./css/vendor/bootstrap/bootstrap.min.css',
-			'./css/main.css',
-		])
-		.pipe(concat('main.css'))
-		.pipe(gulp.dest('./css'));
 }
 
 // Dist tasks
@@ -105,17 +74,17 @@ function minifyJs() {
 		.pipe(gulp.dest('./dist/js'));
 }
 
-gulp.task('dist', gulp.series('vendor', cleanDist, build, renameSources, compileSass, concatCss, minifyCss, concatJs, minifyJs));
+gulp.task('dist', gulp.series(cleanDist, build, renameSources, compileSass, minifyCss, concatJs, minifyJs));
 
 // Default task
-gulp.task('default', gulp.series('vendor', compileSass, concatCss, concatJs));
+gulp.task('default', gulp.series(compileSass, concatJs));
 
 // Dev tasks
 function watch() {
 	browsersync.init({
 		server: './'
 	});
-	gulp.watch('./css/scss/**/*.scss', gulp.series(compileSass, concatCss));
+	gulp.watch('./css/scss/**/*.scss', gulp.series(compileSass));
 	gulp.watch(["./js/**/*.js", "!./js/main.js", '!./js/*.map'], concatJs);
 	gulp.watch('./**/*.html').on('change', browsersync.reload);
 }
