@@ -10,13 +10,11 @@ A minimalistic boilerplate for [Bootstrap 4](https://getbootstrap.com) with [Sas
 
 `yarn`
 
-`gulp`
-
 `gulp dev`
 
 ## Gulp tasks
 
-* `gulp` - The default task that compiles Sass, concatenates CSS & JS files, creates sourcemaps and pulls dependencies
+* `gulp` - Default task that compiles Sass, concatenates CSS & JS files, creates sourcemaps and pulls dependencies
 
 * `gulp dev` - Runs Browsersync in your browser to live reload any changes made
 
