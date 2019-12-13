@@ -2,13 +2,17 @@
 
 A minimalistic boilerplate for [Bootstrap 4](https://getbootstrap.com) with [Sass](https://sass-lang.com), [Browsersync](https://www.browsersync.io) and [Gulp.js](https://gulpjs.com/) for autoprefixing, concatenating, sourcemap creation, live reloading, minification and building.
 
-## Setup
+## Quickstart
 
 `git clone https://github.com/RaunoT/bootstrap-4-boilerplate`
 
 `cd bootstrap-4-boilerplate`
 
-`npm install`
+`yarn`
+
+`gulp`
+
+`gulp dev`
 
 ## Gulp tasks
 
