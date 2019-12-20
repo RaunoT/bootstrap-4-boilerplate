@@ -1,10 +1,8 @@
-# Sass
+# Cache files
 .sass-cache/
 
-# CSS sourcemaps
+# Sourcemaps
 *.css.map
-
-# JS sourcemaps
 *.js.map
 
 # Node modules

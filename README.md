@@ -22,6 +22,6 @@ A minimalistic boilerplate for [Bootstrap 4](https://getbootstrap.com) with [Sas
 
 ## Copyright and License
 
-Copyright © 2019 Rauno Tegelmann.
+Copyright © 2020 Rauno Tegelmann.
 
 Released under the [MIT](https://github.com/RaunoT/bootstrap-4-boilerplate/blob/master/LICENSE) license.
