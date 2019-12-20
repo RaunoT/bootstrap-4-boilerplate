@@ -1,4 +1,4 @@
-# Bootstrap 4 boilerplate
+# Bootstrap 4 Boilerplate
 
 A minimalistic boilerplate for [Bootstrap 4](https://getbootstrap.com) with [Sass](https://sass-lang.com), [Browsersync](https://www.browsersync.io) and [Gulp.js](https://gulpjs.com/) for autoprefixing, concatenating, sourcemap creation, live reloading, minification and building.
 
